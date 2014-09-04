@@ -8,7 +8,7 @@ MAINTAINER Frank Wang "eternnoir@gmail.com"
 EXPOSE 8080
 
 ENV TOMCAT_VERSION 8.0.8
-ENV ACTIVITI_VERSION 5.15.1
+ENV ACTIVITI_VERSION 5.16.1
 
 RUN wget http://archive.apache.org/dist/tomcat/tomcat-8/v${TOMCAT_VERSION}/bin/apache-tomcat-${TOMCAT_VERSION}.tar.gz -O /tmp/catalina.tar.gz
 RUN wget https://github.com/Activiti/Activiti/releases/download/activiti-${ACTIVITI_VERSION}/activiti-${ACTIVITI_VERSION}.zip -O /tmp/activiti.zip
@@ -28,7 +28,7 @@ RUN rm -rf /opt/tomcat/webapps/examples
 RUN rm -rf /opt/tomcat/webapps/docs
 
 # cp activiti war
-RUN cp /opt/activiti/activiti-5.15.1/wars/* /opt/tomcat/webapps/
+RUN cp /opt/activiti/activiti-${ACTIVITI_VERSION}/wars/* /opt/tomcat/webapps/
 
 # Install MySql
 #RUN apt-get update
