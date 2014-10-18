@@ -21,7 +21,8 @@ RUN rm /tmp/catalina.tar.gz
 RUN unzip /tmp/activiti.zip -d /opt/activiti
 
 # Add roles
-ADD tomcat-users.xml /opt/apache-tomcat-${TOMCAT_VERSION}/conf/
+ADD assets /assets
+RUN cp /assets/config/tomcat/tomcat-users.xml /opt/apache-tomcat-${TOMCAT_VERSION}/conf/
 
 # Remove unneeded apps
 RUN rm -rf /opt/tomcat/webapps/examples
@@ -30,12 +31,5 @@ RUN rm -rf /opt/tomcat/webapps/docs
 # cp activiti war
 RUN cp /opt/activiti/activiti-${ACTIVITI_VERSION}/wars/* /opt/tomcat/webapps/
 
-# Install MySql
-#RUN apt-get update
-#RUN DEBIAN_FRONTEND=noninteractive apt-get -y install mysql-server pwgen
-# Remove pre-installed database
-#RUN rm -rf /var/lib/mysql/*
-#
-
-CMD ["/opt/tomcat/bin/catalina.sh","run"]
+CMD ["/assets/init"]
 
