@@ -1,0 +1,11 @@
+#!/bin/bash
+set -e
+set -x
+
+# configure tomcat admin user/password
+TOMCAT_ADMIN_USER=${TOMCAT_ADMIN_USER:-admin}
+TOMCAT_ADMIN_PASSWORD=${TOMCAT_ADMIN_PASSWORD:-admin}
+sed 's,{{TOMCAT_ADMIN_USER}},'"${TOMCAT_ADMIN_USER}"',g' -i /opt/tomcat/conf/tomcat-users.xml
+sed 's,{{TOMCAT_ADMIN_PASSWORD}},'"${TOMCAT_ADMIN_PASSWORD}"',g' -i /opt/tomcat/conf/tomcat-users.xml
+
+/opt/tomcat/bin/catalina.sh run

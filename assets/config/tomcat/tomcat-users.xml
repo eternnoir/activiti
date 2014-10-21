@@ -22,5 +22,5 @@
   <role rolename="manager-status"/>
   <role rolename="manager-script"/>
   <role rolename="manager-jmx"/>
-  <user name="admin" password="admin" roles="admin-gui,admin-script,manager-gui,manager-status,manager-script,manager-jmx"/>
+  <user name="{{TOMCAT_ADMIN_USER}}" password="{{TOMCAT_ADMIN_PASSWORD}}" roles="admin-gui,admin-script,manager-gui,manager-status,manager-script,manager-jmx"/>
 </tomcat-users>
