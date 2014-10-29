@@ -73,9 +73,9 @@ The image can be configured to use an external MySQL database instead of startin
 Before you start the Activiti image create user and database for activiti.
 
 ```sql
-CREATE USER ‘activiti’@‘%.%.%.%’ IDENTIFIED BY 'password';
+CREATE USER 'activiti'@'%.%.%.%' IDENTIFIED BY 'password';
 CREATE DATABASE IF NOT EXISTS `activiti_production` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_unicode_ci`;
-GRANT ALL PRIVILEGES ON `activiti_production`.* TO ‘activiti’@‘%.%.%.%’;
+GRANT ALL PRIVILEGES ON `activiti_production`.* TO 'activiti'@'%.%.%.%';
 ```
 
 We are now ready to start the Activiti application.
@@ -115,7 +115,7 @@ The run command looks like this.
 
 ```bash
 docker run --name=mysql -d \
-  -e 'DB_NAME=activiti_production' -e 'DB_USER=activiti’ -e 'DB_PASS=password' \
+  -e 'DB_NAME=activiti_production' -e 'DB_USER=activiti' -e 'DB_PASS=password' \
 	-v /opt/mysql/data:/var/lib/mysql \
 	sameersbn/mysql:latest
 ```
