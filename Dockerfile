@@ -2,7 +2,10 @@
 # Ubuntu 14.04 with activiti Dockerfile
 #
 # Pull base image.
-FROM dockerfile/java
+### http://blog.docker.com/2015/03/updates-available-to-popular-repos-update-your-images/
+# dockerfile/java renamed to java
+### 
+FROM java
 MAINTAINER Frank Wang "eternnoir@gmail.com"
 
 EXPOSE 8080
