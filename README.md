@@ -14,7 +14,7 @@ Dockerfile to build an [Activiti BPM](#http://www.activiti.org/) container image
 
 ## Version
 
-Current Version: **current**
+Current Version: 5.19.0
 
 # Installation
 
