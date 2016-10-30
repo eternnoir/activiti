@@ -5,14 +5,14 @@
 ### http://blog.docker.com/2015/03/updates-available-to-popular-repos-update-your-images/
 # dockerfile/java renamed to java
 ### 
-FROM java
+FROM openjdk:7
 MAINTAINER Frank Wang "eternnoir@gmail.com"
 
 EXPOSE 8080
 
-ENV TOMCAT_VERSION 8.0.14
+ENV TOMCAT_VERSION 8.0.38
 ENV ACTIVITI_VERSION 5.21.0
-ENV MYSQL_CONNECTOR_JAVA_VERSION 5.1.33
+ENV MYSQL_CONNECTOR_JAVA_VERSION 5.1.40
 
 RUN wget http://archive.apache.org/dist/tomcat/tomcat-8/v${TOMCAT_VERSION}/bin/apache-tomcat-${TOMCAT_VERSION}.tar.gz -O /tmp/catalina.tar.gz
 RUN wget https://github.com/Activiti/Activiti/releases/download/activiti-${ACTIVITI_VERSION}/activiti-${ACTIVITI_VERSION}.zip -O /tmp/activiti.zip
